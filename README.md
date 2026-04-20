@@ -34,13 +34,22 @@ The binary is generated at:
 
 ## Homebrew
 
-You can install `notecmd` with Homebrew directly from this repository's formula:
+You can install `notecmd` from the official tap:
+
+```sh
+brew tap ilaario/notecmd
+brew install notecmd
+```
+
+Tap repository:
+
+- [ilaario/homebrew-notecmd](https://github.com/ilaario/homebrew-notecmd)
+
+If you prefer a one-off install without tapping first, you can still use the formula stored in this repository:
 
 ```sh
 brew install https://raw.githubusercontent.com/ilaario/notecmd/main/Formula/notecmd.rb
 ```
-
-This formula currently builds from the published `v1.1` source tarball on GitHub.
 
 ## Basic Usage
 
