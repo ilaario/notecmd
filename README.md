@@ -32,6 +32,16 @@ The binary is generated at:
 ./build/notecmd
 ```
 
+## Homebrew
+
+You can install `notecmd` with Homebrew directly from this repository's formula:
+
+```sh
+brew install https://raw.githubusercontent.com/ilaario/notecmd/main/Formula/notecmd.rb
+```
+
+This formula currently builds from the published `v1.1` source tarball on GitHub.
+
 ## Basic Usage
 
 Run a command and save it:
@@ -149,4 +159,10 @@ If you want to install the binary globally, you can use:
 
 ```sh
 make install
+```
+
+You can also override the install prefix:
+
+```sh
+make install PREFIX=/opt/homebrew
 ```
