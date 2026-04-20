@@ -120,7 +120,7 @@ int read_key() {
         char seq[2];
         if (read(STDIN_FILENO, &seq[0], 1) != 1) return 27;
         if (read(STDIN_FILENO, &seq[1], 1) != 1) return 27;
-        if (seq[0] == '[') {
+        if (seq[0] == '[' || seq[0] == 'O') {
             if (seq[1] == 'A') return 1000;
             if (seq[1] == 'B') return 1001;
             if (seq[1] == 'C') return 1002;

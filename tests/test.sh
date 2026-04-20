@@ -97,6 +97,17 @@ EOF
   assert_equals "$selected_command" "git status --short"
 }
 
+test_picker_application_cursor_keys() {
+  local home="$TMP_DIR/picker-home"
+  local selection_file="$TMP_DIR/selection-app-cursor.txt"
+  local selected_command
+
+  printf '\033OB\t' | env HOME="$home" NOTECMD_TEST_MODE=1 NOTECMD_SELECTION_FILE="$selection_file" "$BIN" >/dev/null
+  selected_command="$(cat "$selection_file")"
+
+  assert_equals "$selected_command" "git status --short"
+}
+
 test_plain_letters_still_filter() {
   local home="$TMP_DIR/picker-home"
   local picker_output
@@ -125,6 +136,7 @@ test_legacy_history_loading
 test_save_and_list
 test_shell_init_output
 test_picker_filter_and_tab_output
+test_picker_application_cursor_keys
 test_plain_letters_still_filter
 test_picker_delete_flow
 
