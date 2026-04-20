@@ -41,6 +41,8 @@ brew tap ilaario/notecmd
 brew install notecmd
 ```
 
+After installation, Homebrew will print the `eval ... init zsh/bash` snippet to add to your shell config.
+
 Tap repository:
 
 - [ilaario/homebrew-notecmd](https://github.com/ilaario/homebrew-notecmd)

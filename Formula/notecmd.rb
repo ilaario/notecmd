@@ -8,6 +8,18 @@ class Notecmd < Formula
     system "make", "install", "PREFIX=#{prefix}"
   end
 
+  def caveats
+    <<~EOS
+      To enable shell integration, add one of these lines to your shell config:
+
+        For zsh (~/.zshrc):
+          eval "$("#{opt_bin}/notecmd" init zsh)"
+
+        For bash (~/.bashrc or ~/.bash_profile):
+          eval "$("#{opt_bin}/notecmd" init bash)"
+    EOS
+  end
+
   test do
     assert_match "notecmd version 1.1.1", shell_output("#{bin}/notecmd --version")
   end
