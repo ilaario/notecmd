@@ -2,6 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -I./include
 TARGET = notecmd
 SRC = src/main.c
+HEADERS = include/notecmd.h
 BUILD_DIR = build
 BIN = $(BUILD_DIR)/$(TARGET)
 TEST_SCRIPT = tests/test.sh
@@ -14,7 +15,7 @@ all: $(BIN)
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-$(BIN): $(SRC) | $(BUILD_DIR)
+$(BIN): $(SRC) $(HEADERS) | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $(BIN) $(SRC)
 
 test: $(BIN)

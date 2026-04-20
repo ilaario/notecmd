@@ -23,6 +23,6 @@
 #include <getopt.h> 
 
 /** Current notecmd version string. */
-#define VERSION "1.0.0"
+#define VERSION "1.1.1"
 
 #endif // TMP_NAME_H
